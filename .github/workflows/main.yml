@@ -1,0 +1,50 @@
+# Test 2024-11-19 at 03:05:37
+# https://setuptools.pypa.io/en/latest/userguide/quickstart.html
+
+name: Test
+run-name: createAndInstallPythonPackage
+
+on:
+  push:
+    paths:
+      - '**/main.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        path: aaa
+
+    - name: Build
+      run: |
+        pwd
+        python3 -m venv aaa
+        cd aaa
+        source bin/activate
+        python3 -m pip install --upgrade build
+        python3 -m build
+        cd
+
+    - name: List zip
+      run: |
+       unzip -l aaa/dist/Sample-0.1.0-py3-none-any.whl
+
+    - name: Install
+      run: |
+        mkdir bbb
+        pwd
+        python3 -m venv bbb
+        cd bbb
+        source bin/activate
+        python3 -m pip install ../aaa/dist/Sample-0.1.0-py3-none-any.whl
+        python3 -m pip show sample
+        tree ./lib/python3.12/site-packages
+        cd
+
+    - name: Run installed command
+      run: |
+        cd bbb
+        source bin/activate
+        python3 -m sample.app
