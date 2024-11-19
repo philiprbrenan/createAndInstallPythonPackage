@@ -1,4 +1,4 @@
-# Test 2024-11-19 at 03:22:37
+# Test 2024-11-19 at 03:29:14
 # https://setuptools.pypa.io/en/latest/userguide/quickstart.html
 
 name: Test
@@ -13,38 +13,39 @@ jobs:
   test:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4                                                # Check the repo out into folder aaa
       with:
         path: aaa
 
     - name: Build
       run: |
         pwd
-        python3 -m venv aaa
+        python3 -m venv aaa                                                     # Create Python virtual environment in folder aaa
         cd aaa
-        source bin/activate
-        python3 -m pip install --upgrade build
-        python3 -m build
+        source bin/activate                                                     # Activate Python virtual environment
+        python3 -m pip install --upgrade build                                  # Install build locally
+        python3 -m build                                                        # Build the package based onthe toml file
         cd
 
     - name: List zip
       run: |
-       unzip -l aaa/dist/Sample-0.1.0-py3-none-any.whl
+       unzip -l aaa/dist/Sample-0.1.0-py3-none-any.whl                          # List the contents of the whl file
 
-    - name: Install
+    - name: Install                                                             # Install the whl file in a different Python virtual environment
       run: |
-        mkdir bbb
+        mkdir bbb                                                               # Different folder
         pwd
         python3 -m venv bbb
         cd bbb
-        source bin/activate
-        python3 -m pip install ../aaa/dist/Sample-0.1.0-py3-none-any.whl
-        python3 -m pip show sample
-        tree ./lib/python3.12/site-packages
+        source bin/activate                                                     # Activate Python virtual environment
+        python3 -m pip install ../aaa/dist/Sample-0.1.0-py3-none-any.whl        # Install using pip as normal
+        python3 -m pip show sample                                              # Show installation
+        tree ./lib/python3.12/site-packages                                     # Show installed files
         cd
 
     - name: Run installed command
       run: |
         cd bbb
-        source bin/activate
-        python3 -m sample.app
+        source bin/activate                                                     # Activate Python virtual environment in new folder
+        python3 -m sample.app                                                   # Run the app and expect to get
+# Hello World!
