@@ -1,4 +1,4 @@
-# Test 2024-11-19 at 03:30:13
+# Test 2024-11-19 at 03:32:57
 # https://setuptools.pypa.io/en/latest/userguide/quickstart.html
 
 name: Test
@@ -40,7 +40,7 @@ jobs:
         source bin/activate                                                     # Activate Python virtual environment
         python3 -m pip install ../aaa/dist/Sample-0.1.0-py3-none-any.whl        # Install using pip as normal
         python3 -m pip show sample                                              # Show installation
-        tree ./lib/python3.12/site-packages                                     # Show installed files
+        tree ./lib/python3.12/site-packages/sample                              # Show installed files
         cd
 
     - name: Run installed command
