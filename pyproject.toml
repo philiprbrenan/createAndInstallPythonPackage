@@ -1,0 +1,18 @@
+[project]
+name = "Sample"
+version = "0.1.0"
+description = "Sample project"
+
+dependencies = ["typer"]
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+sample-typer-app = "sample.app:app"
