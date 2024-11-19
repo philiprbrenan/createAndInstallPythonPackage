@@ -1,4 +1,4 @@
-# Test 2024-11-19 at 03:29:14
+# Test 2024-11-19 at 03:30:13
 # https://setuptools.pypa.io/en/latest/userguide/quickstart.html
 
 name: Test
@@ -13,7 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4                                                # Check the repo out into folder aaa
+    - uses: actions/checkout@v4                                                 # Check the repo out into folder aaa
       with:
         path: aaa
 
@@ -47,5 +47,5 @@ jobs:
       run: |
         cd bbb
         source bin/activate                                                     # Activate Python virtual environment in new folder
-        python3 -m sample.app                                                   # Run the app and expect to get
+        python3 -m sample.app                                                   # Run the app and expect to get:
 # Hello World!
