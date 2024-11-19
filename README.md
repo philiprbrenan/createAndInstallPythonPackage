@@ -4,10 +4,10 @@
 
 # Create, Install and Run a Python package
 
-This action uses **build** to create a **.whl** file containing the comamnd
+This action uses **build** to create a **.whl** file containing the command
 line application app described in the **.toml** file.
 
-The action then installs the app contained in the **.whl** file in a different
+The action installs the app contained in the **.whl** file in a different
 folder and a different python virtual environment and executed to verify that the
 action has suceeded.
 
