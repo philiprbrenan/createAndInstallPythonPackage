@@ -17,4 +17,4 @@ Documentation for  [toml files.](https://packaging.python.org/en/latest/guides/w
 
 Documentation for your project should not be included in the **.whl** file, but
 instead it should be added to a web site convenient to you and then referenced
-via **Urls** as described in: [project urls](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls)
+via **;project.urls]** as described in: [project urls](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls)
