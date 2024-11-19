@@ -8,8 +8,8 @@ This action uses **build** to create a **.whl** file containing the command
 line application app described in the **.toml** file.
 
 The action installs the app contained in the **.whl** file in a different
-folder and a different python virtual environment and executes it to verify that the
-packaging action has succeeded.
+folder and a different Python virtual environment and executes it to verify that the
+packaging action has succeeded as expected.
 
 Documentation for [building packages.](https://setuptools.pypa.io/en/latest/userguide/quickstart.html)
 
