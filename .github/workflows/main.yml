@@ -1,4 +1,4 @@
-# Test 2024-11-19 at 03:42:24
+# Test 2024-11-19 at 03:42:55
 # https://setuptools.pypa.io/en/latest/userguide/quickstart.html
 
 name: Test
@@ -38,7 +38,7 @@ jobs:
         python3 -m venv bbb
         cd bbb
         source bin/activate                                                     # Activate different Python virtual environment
-        python3 -m pip install ../aaa/dist/Sample-0.1.0-py3-none-any.whl        # Install package using pip
+        python3 -m pip install -qqq ../aaa/dist/Sample-0.1.0-py3-none-any.whl   # Install package using pip
         python3 -m pip show sample                                              # Show installation details
         cd
 
