@@ -1,4 +1,4 @@
-# Test 2024-11-19 at 03:39:26
+# Test 2024-11-19 at 03:42:24
 # https://setuptools.pypa.io/en/latest/userguide/quickstart.html
 
 name: Test
@@ -23,7 +23,7 @@ jobs:
         python3 -m venv aaa                                                     # Create Python virtual environment in folder aaa
         cd aaa
         source bin/activate                                                     # Activate Python virtual environment
-        python3 -m pip install --upgrade build                                  # Install build locally
+        python3 -m pip install --upgrade -qqq build                             # Install build locally
         python3 -m build                                                        # Build the package based on the .toml file
         cd
 
